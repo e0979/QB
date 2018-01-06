@@ -9,17 +9,17 @@
 		 */		
 		public static function handleLogin($controller) {
 			
-			$area = 'miweb';
+			$area = 'desktop';
 			
 			@session_start();
 			
 			if (isset($_SESSION['loggedIn']	)) {
 				
 				//User is logged			
-				$logged = $_SESSION['loggedIn'];
+				$logged 	= $_SESSION['loggedIn'];
 				
-				$role 	  = $_SESSION['role'];
-				$username = $_SESSION['username'];
+				$role 	  	= $_SESSION['role'];
+				$username 	= $_SESSION['username'];
 				
 				
 				//validar tipo de session y redirect if needed

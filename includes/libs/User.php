@@ -95,14 +95,15 @@
 		public function getUserdata(){
 			
 			$user = $this->get('username');
+			$cedula = $this->get('cedula');
 			
 			if (!empty($user)) {
 				$role = $this->get('role');
 			
-				$table = $role; //'user_profile';
-				$field = 'username';
+				$table = 'empleados';//$role; //'user_profile';
+				$field = 'cedula';//'username';
 									
-				return DB::query("SELECT * FROM ". DB_PREFIX . $table ." WHERE ". $field ."=%s LIMIT 1", $user);
+				return DB::query("SELECT * FROM ". DB_PREFIX . $table ." WHERE ". $field ."=%s LIMIT 1", $cedula); //$user
 			}
 		
 		}

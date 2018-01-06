@@ -97,6 +97,7 @@
 					$this->user->set('role', $role);
 					$this->user->set('loggedIn', true);
 					$this->user->set('username', $username);
+					$this->user->set('cedula', $validUser[0]['cedula']);
 
 					if (isset($access_token)) {
 						$this->user->set('socialnetwork', true);	
@@ -731,8 +732,7 @@
 		}
 		// GETSESSION sends session response to javscript, but only secure data
 		public function getsession () {
-			$response["socialnetwork"] 	= User::get('socialnetwork');
-	 		$response["username"] 		= User::get('username');	
+			$response["username"] 		= User::get('username');	
 	 		$getUserdata 				= $this->user->getUserdata();	
 	 		$response["userdata"] 		= $getUserdata[0];	
 	 		echo json_encode($response);			

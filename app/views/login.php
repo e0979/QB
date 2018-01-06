@@ -31,7 +31,7 @@
 			<form id="form-login" role="form" class="form-signin">
 				<h1 class="form-signin-heading text-muted quinbi-login"><!--img src="<?php echo IMG; ?>quinbi.png"--></h1>
 
-				<input type="text" class="form-control user" id="rif" name="rif" required autofocus="">
+				<input type="text" class="form-control user" id="email" name="email" required autofocus="">
 				<input type="password" class="form-control password" id="password" name="password" required>
 				<button id="send" type="submit" class=" btn btn-lg btn-login  btn-block">
 						<i class="glyphicon glyphicon-log-in"></i>

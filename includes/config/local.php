@@ -23,7 +23,7 @@
 		define ( 'DB_USER', 'root');
 		define ( 'DB_PASSWORD', 'root');
 		define ( 'DB_PASS', 'root');
-		define ( 'DB_NAME', ''); 
+		define ( 'DB_NAME', 'db23550_queenbee'); 
 		define ( 'DB_PREFIX', '');	
 		define ( 'URL_EMAIL', 'http://');	
 ?>
