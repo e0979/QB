@@ -1,7 +1,7 @@
 <?php
 	
-	
-	//ini_set("display_error",1);
+	error_reporting(E_ALL);
+	ini_set("display_error",1);
 	
 	require_once ('../includes/config/local.php'); 
 	require_once ('../includes/config/config.php');

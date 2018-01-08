@@ -51,7 +51,7 @@ require.config({
       'appassets/stepform' : ['jquery', 'globals', 'assets/jquery.validate.min'],
       'assets/handlebars.min' :['jquery'],
       'assets/bootstrap-editable.min':['jquery','assets/bootstrap.min'],
-      //'assets/jquery.dataTables.min': ['jquery'],
+      'assets/jquery.dataTables.min': ['jquery','assets/bootstrap.min'],
       //'assets/jquery.maskedinput.min': ['jquery'],
       //'assets/dataTables.bootstrap': ['jquery', 'assets/bootstrap.min', 'assets/jquery.dataTables.min'], 
       //'paging': ['jquery','assets/jquery.dataTables.min'],
@@ -65,6 +65,7 @@ require.config({
       'assets/bootstrap-editable.min','assets/jquery.scrollTo.min','assets/bootstrap-datetimepicker-v4','assets/jquery.geocomplete.min','assets/moment.min','assets/fullcalendar.min','assets/jsonsql','functions','config'],
       'app/app': ['jquery','common', 'globals','assets/jquery.validate.min', 'app/posts'],
       'app/login': ['jquery','globals','assets/jquery.validate.min'],
+      'app/egresos': ['jquery', 'globals','assets/jquery.dataTables.min'],
       'app/hashchange': ['common', 'assets/handlebars.min', 'app/login'],
       }
     });
@@ -81,11 +82,14 @@ require([
       var accessHashPart = accessHash.split('/');
 
       console.log("Access:" + accessArray +" Hash:" + accessHash);
-      
-      require(['app/login'], function(login) {
-          login.run();
-        });
 
+      switch(accessArray[3]) {
+        case "":
+          require(['app/login'], function(login) {              
+            login.run();
+          }); 
+          break;    
+      }      
       
 
     });

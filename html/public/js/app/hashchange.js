@@ -29,23 +29,20 @@ define(function() {
 			
 			if (active_page[0] == "") {
 				window.location.hash = "#welcome";
-
-				
-
 			} else {
 				cache[url] = $('<div class="view"/>').appendTo('#desktop').load(url, function() {
 
 				switch(active_page[0]) {
-					case "boards":
+					case "egresos":
 						switch (active_page[1]){
 							case "add":
-								require(['app/boards'], function(Boards) {
-									Boards.add();
+								require(['app/egresos'], function(egresos) {
+									egresos.add();
 								});	
 								break;							
 							default:
-								require(['app/app'], function(App) {
-									App.boards();
+								require(['app/egresos'], function(egresos) {
+									egresos.list();
 								});				
 								break;
 						}
